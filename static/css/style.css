@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400&family=Noto+Sans:ital,wght@1,500;1,700&display=swap');
+
+
+html{
+    font-size: 14px;
+}
+
+body{
+    font-family: 'Noto Sans', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+.carousel-item img{
+    object-fit: cover;
+    object-position: top;
+    height: 110vh !important;
+    overflow: hidden;
+}
+
+.old_price{
+    font-weight: bold;
+    color: red;
+}
+
+.new_price{
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+
+.pic-box{
+    position: relative;
+}
+
+.trend{
+    background-color: green;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+    display: inline;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+
+.checkoutform label{
+    font-size: 14px !important;
+    font-weight: 600;
+}
+.checkoutform input{
+    font-size: 14px !important;
+}
+
+.foot-p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 95vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-img-top {
+  height: 250px;
+  width: 100%;
+  object-fit: contain;
+}

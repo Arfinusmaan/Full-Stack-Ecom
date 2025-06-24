@@ -1,0 +1,83 @@
+{% extends 'shop/layouts/main.html' %}
+
+{% block title %}
+    EpicDrop | OrderView
+{% endblock title %}
+
+{% block content %}
+<section class="bg-light py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3"> OrderView Page 
+                    <a href="{% url 'myorders' %}" class="btn btn-warning float-end text-white"><i class="fa fa-reply"></i>Back</a>
+                </h4>
+                <hr style="border-color: rgb(89,90,90);">
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Shipping Details</h4>
+                            <hr>
+                            <label for="" class="mt-2">First Name</label>
+                            <div class="border p-1">{{orders.fname}}</div>
+                            <label for="" class="mt-2">Last Name</label>
+                            <div class="border p-1">{{orders.lname}}</div>
+                            <label for="" class="mt-2">Email</label>
+                            <div class="border p-1">{{orders.email}}</div>
+                            <label for="" class="mt-2">Contact No</label>
+                            <div class="border p-1">{{orders.phone}}</div>
+                            <label for="" class="mt-2">Address</label>
+                            <div class="border p-1">
+                                {{orders.address}},
+                                {{orders.city}},
+                                {{orders.state}},
+                                {{orders.country}},
+                            </div>
+                            <label for="" class="mt-2">Pin Code</label>
+                            <div class="border p-1">{{orders.pincode}}</div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Order Details</h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Quantity </th>
+                                        <th>Price</th>
+                                        <th>Image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in orderitem %}
+                                    <tr>
+                                        <td>{{ item.product.name }}</td>
+                                        <td>{{ item.quantity }}</td>
+                                        <td>{{ item.price }}</td>
+                                        <td>
+                                            <img src="{{ item.product.product_image.url }}" height="50px" width="50px" alt="Product Image">
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <h4>Grand Total : <span class="float-end">{{orders.total_price}}</span></h4>
+                            <h6 class="border p-1">Payment Mode : {{orders.payment_mode}}</h6>
+                            <h6 class="border p-1">Order Status : {{orders.status}}</h6>
+                            <h6 class="border p-1">Tracking Number : {{orders.tracking_no}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
